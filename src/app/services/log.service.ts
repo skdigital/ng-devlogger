@@ -36,11 +36,19 @@ export class LogService {
   }
 
   updateLog(updatedLog: Log) {
-    this.logs.forEach((currentLog, index) => {
-      if (updatedLog.id === currentLog.id) {
+    this.logs.forEach((currLog, index) => {
+      if (updatedLog.id === currLog.id) {
         this.logs.splice(index, 1);
       }
     });
     this.logs.unshift(updatedLog);
+  }
+
+  deleteLog(log: Log) {
+    this.logs.forEach((currLog, index) => {
+      if (log.id === currLog.id) {
+        this.logs.splice(index, 1);
+      }
+    })
   }
 }
