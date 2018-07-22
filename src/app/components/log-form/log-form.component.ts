@@ -15,7 +15,7 @@ export class LogFormComponent implements OnInit {
 
   id: string;
   text: string;
-  date: Date;
+  date: any;
 
   isNew: boolean = true;
 
@@ -54,9 +54,16 @@ export class LogFormComponent implements OnInit {
       // update log
       this._logService.updateLog(updateLog);
     }
+    this.clearState();
   }
 
-  
+  clearState() {
+    this.isNew = true;
+    this.id = '';
+    this.text = '';
+    this.date = '';
+    this._logService.clearState();
+  }
 
   // Generates a new UUID
   getenerateId() {

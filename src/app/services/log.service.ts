@@ -10,9 +10,11 @@ export class LogService {
 
   logs: Log[];
 
-  private LogSource = new BehaviorSubject<Log>({ id: null, text: null, date: null });
+  private _LogSource = new BehaviorSubject<Log>({ id: null, text: null, date: null });
+  public selectedLog = this._LogSource.asObservable();
 
-  public selectedLog = this.LogSource.asObservable();
+  private _stateSource = new BehaviorSubject<Boolean>(true);
+  public stateClear = this._stateSource.asObservable();
 
   constructor() {
     this.logs = [
@@ -27,7 +29,7 @@ export class LogService {
   }
 
   setFormLog(log: Log) {
-    this.LogSource.next(log);
+    this._LogSource.next(log);
     console.log(log);
   }
 
@@ -50,5 +52,9 @@ export class LogService {
         this.logs.splice(index, 1);
       }
     })
+  }
+
+  clearState() {
+    this._stateSource.next(true);
   }
 }
