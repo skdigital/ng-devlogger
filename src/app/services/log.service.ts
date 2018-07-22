@@ -18,6 +18,7 @@ export class LogService {
 
   constructor() {
     this.logs = [
+      //                  ---- MOCK DATA ----
       //   { id: '1', text: 'Generated Component', date: new Date('01/25/2018 12:54:23') },
       //   { id: '2', text: 'Added Bootstrap', date: new Date('02/27/2018 09:33:23') },
       //   { id: '3', text: 'Added Logs Component', date: new Date('12/20/2018 08:54:23') }
