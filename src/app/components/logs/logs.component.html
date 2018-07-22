@@ -1,12 +1,7 @@
-<ul class="list-group">
+<ul class="list-group mb-1" *ngFor="let log of logs">
   <li class="list-group-item d-flex justify-content-between align-item-center">
-    <a href="/">Generated Component</a>
-    <span class="log-date">12/01/2020</span>
-    <i class="fa fa-remove"></i>
-  </li>
-  <li class="list-group-item d-flex justify-content-between align-item-center">
-    <a href="/">Added Login</a>
-    <span class="log-date">12/01/2020</span>
+    <a href="/">{{ log.text }}</a>
+    <span class="log-date"> {{ log.date | date:'short' }} </span>
     <i class="fa fa-remove"></i>
   </li>
 </ul>
