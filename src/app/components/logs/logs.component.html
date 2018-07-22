@@ -1,4 +1,4 @@
-<ul class="list-group mb-1" *ngIf="loaded && logs?.length > 0">
+<ul class="list-group mb-1" *ngIf="loaded && logs.length > 0">
   <li *ngFor="let log of logs" class="list-group-item d-flex justify-content-between align-item-center" [class.list-group-item-info]="selectedLog === log">
     <a (click)="onSelect(log)" href="#">{{ log.text }}</a>
     <span class="log-date"> {{ log.date | date:'short' }} </span>
